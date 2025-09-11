@@ -1,56 +1,30 @@
-import { useState } from "react";
-import styles from "./PageInitial.module.css"; // se quiser usar CSS Module
-
 const PageInitial = () => {
-  const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([
-    { from: "bot", text: "Olá! Sou a IA do Resolve Fácil Caruaru. Em que posso ajudar?" }
-  ]);
-
-  const handleSend = () => {
-    if (!input.trim()) return;
-
-    // Adiciona a pergunta do usuário
-    const newMessages = [...messages, { from: "user", text: input }];
-
-    // Mini IA (respostas simuladas)
-    let resposta = "Desculpe, ainda não sei responder essa pergunta.";
-    if (input.toLowerCase().includes("horário")) {
-      resposta = "Os serviços da prefeitura funcionam de segunda a sexta, das 8h às 14h.";
-    } else if (input.toLowerCase().includes("endereço")) {
-      resposta = "A prefeitura fica localizada na Rua Professor Lourival Vilanova, nº 300, Caruaru.";
-    } else if (input.toLowerCase().includes("consulta")) {
-      resposta = "Para marcar consulta no posto de saúde, acesse o portal ou ligue 156.";
-    }
-
-    setMessages([...newMessages, { from: "bot", text: resposta }]);
-    setInput("");
-  };
-
   return (
-    <div className={styles.chatContainer}>
+    <div style={{ textAlign: "center", marginTop: "40px" }}>
       <h1>Resolve Fácil Caruaru</h1>
-      <div className={styles.chatBox}>
-        {messages.map((msg, idx) => (
-          <div
-            key={idx}
-            className={msg.from === "bot" ? styles.botMsg : styles.userMsg}
-          >
-            {msg.text}
-          </div>
-        ))}
-      </div>
-      <div className={styles.inputArea}>
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Digite sua pergunta..."
-        />
-        <button onClick={handleSend}>Enviar</button>
+      <h2>Funcionalidades</h2>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "20px" }}>
+        <button style={btnStyle}>Chatbot inteligente para dúvidas</button>
+        <button style={btnStyle}>Portal centralizado de serviços</button>
+        <button style={btnStyle}>Busca rápida de documentos e horários</button>
+        <button style={btnStyle}>Linguagem acessível e suporte a voz</button>
+        <button style={btnStyle}>Atualizações automáticas com dados oficiais</button>
       </div>
     </div>
   );
+};
+
+// estilo inline só para facilitar
+const btnStyle = {
+  background: "#1976d2",
+  color: "white",
+  border: "none",
+  borderRadius: "8px",
+  padding: "12px 18px",
+  cursor: "pointer",
+  fontSize: "14px",
+  transition: "0.3s",
 };
 
 export default PageInitial;

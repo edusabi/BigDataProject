@@ -1,10 +1,14 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 //pages
-import Home from './Pages/Home/Home';
-import LoginRegistro from "./Pages/LoginRegistro/LoginRegistro";
 import PageInitial from "./Pages/PageInitial/PageInitial";
 import ChatBot from "./Pages/ChatBot/ChatBot";
+import Sobre from "./Pages/Sobre/Sobre";
+import Contacts from "./Pages/Contacts/Contacts";
+
+
+//components
+import ConfigButton from "./Components/ConfigButton/ConfigButton";
 
 function App() {
 
@@ -15,13 +19,13 @@ function App() {
         
           <Routes>
 
-            <Route path='/home' element={<Home/>}/>
-            <Route path='/loginRegistro' element={<LoginRegistro/>}/>
             <Route path='/' element={<PageInitial/>}/>
             <Route path='/chatBot' element={<ChatBot/>}/>
+            <Route path='/about' element={<Sobre/>}/>
+            <Route path='/contacts' element={<Contacts/>}/>
 
           </Routes>
-        
+          <ConfigButton/>
         </BrowserRouter>
 
       </div>

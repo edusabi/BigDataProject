@@ -1,0 +1,23 @@
+.divHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--czEscuro);
+}
+
+.divImg{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.divList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background-color: var(--czClaro);
+    padding: .6rem 0;
+}

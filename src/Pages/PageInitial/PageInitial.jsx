@@ -1,30 +1,46 @@
-const PageInitial = () => {
-  return (
-    <div style={{ textAlign: "center", marginTop: "40px" }}>
-      <h1>Resolve Fácil Caruaru</h1>
-      <h2>Funcionalidades</h2>
+import { useEffect, useState } from "react";
+import Navbar from "../../Components/Navbar/Navbar";
+import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "20px" }}>
-        <button style={btnStyle}>Chatbot inteligente para dúvidas</button>
-        <button style={btnStyle}>Portal centralizado de serviços</button>
-        <button style={btnStyle}>Busca rápida de documentos e horários</button>
-        <button style={btnStyle}>Linguagem acessível e suporte a voz</button>
-        <button style={btnStyle}>Atualizações automáticas com dados oficiais</button>
+const PageInitial = () => {
+  
+  const [loadingPage, setLoadingPage] = useState(true);
+
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      setLoadingPage(false);
+    },1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div>
+      <div>
+        {loadingPage && <LoadingPage />}
+
+        {!loadingPage && (
+          <div>
+            <Navbar />
+          
+              <h2 style={{textAlign:"center"}}>
+                Facilitando seu acesso aos serviços públicos de Caruaru,
+                de forma rápida e sem burocracia.
+              </h2>
+
+              <div>
+                <div>chatbot</div>
+                <div>voice</div>
+                <div>serviços</div>
+                <div>localização</div>
+              </div>
+          
+          </div>
+        )}
       </div>
+
     </div>
   );
-};
-
-// estilo inline só para facilitar
-const btnStyle = {
-  background: "#1976d2",
-  color: "white",
-  border: "none",
-  borderRadius: "8px",
-  padding: "12px 18px",
-  cursor: "pointer",
-  fontSize: "14px",
-  transition: "0.3s",
 };
 
 export default PageInitial;

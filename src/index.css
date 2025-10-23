@@ -2,4 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+    --branco: #FFFFFF;
+    --czEscuro: #2E3A40;
+    --czClaro: #889195;
+    --azul: #005A9C;
+    --amarOuro: #FDB813;
+}
+
+body{
+    background-color: var(--branco);
 }

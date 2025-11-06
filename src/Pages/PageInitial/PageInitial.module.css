@@ -1,0 +1,69 @@
+.divsCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* duas colunas fixas */
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+/* Links (NavLink) */
+.divsCards a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Cada card */
+.divsCards > a > div {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+.divsCards > a > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 188, 212, 0.2);
+}
+
+/* Ícones */
+.divsCards svg {
+  font-size: 2.3rem;
+  color: #00bcd4;
+  margin-bottom: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+/* Ícone cresce ao passar o mouse */
+.divsCards > a > div:hover svg {
+  transform: scale(1.1);
+}
+
+/* Texto dentro do card */
+.divsCards > a > div span {
+  font-size: 1rem;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+/* Responsividade — 1 coluna no celular */
+@media (max-width: 600px) {
+  .divsCards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .divsCards > a > div {
+    padding: 1.5rem 1rem;
+  }
+}

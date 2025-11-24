@@ -5,7 +5,7 @@ import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import { IoLocationOutline } from "react-icons/io5";
 import { RiUserVoiceLine, RiRobot3Line } from "react-icons/ri";
 import { FaNotesMedical } from "react-icons/fa";
-import { IoIosPaper } from "react-icons/io";
+import { LuBot } from "react-icons/lu";
 
 import style from "./PageInitial.module.css";
 import { NavLink } from "react-router-dom";
@@ -44,14 +44,14 @@ const PageInitial = () => {
 
               <NavLink to="/chatbot">
                 <div>
-                  <RiUserVoiceLine />
+                  <LuBot/>
                   <span>Fale com a Gente (Chatbot)</span>
                 </div>
               </NavLink>
 
               <NavLink to="/guiaVoz">
                 <div>
-                  <IoIosPaper />
+                  <RiUserVoiceLine />
                   <span>Guia por Voz</span>
                 </div>
               </NavLink>

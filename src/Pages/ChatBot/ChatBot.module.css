@@ -1,82 +1,124 @@
+/* ===== PÁGINA ===== */
 .page {
-  position: relative;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 
-/* Botão fica fixo em cima */
 .btnVoltar {
-  margin-top: 16px;
-  background-color: black;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  text-decoration: none;
+  position: absolute;
+  left: 0;
+  background: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
 }
 
-.btnVoltar a {
-  color: white;
-  text-decoration: none;
+.btnVoltar:hover {
+  background: #e8e8e8;
 }
 
-/* Chat centralizado mais abaixo */
+/* ===== CONTAINER DO CHAT ===== */
 .chatContainer {
-  margin-top: auto;  /* empurra para baixo */
-  margin-bottom: 40px;
-  max-width: 400px;
-  width: 100%;
-  background: #f5f5f5;
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 95%;
+  max-width: 600px;
+  background: #ffffffd3;
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
 }
 
+/* ===== TÍTULO ===== */
+.chatContainer h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #004a8f;
+}
+
+/* ===== CAIXA DO CHAT ===== */
 .chatBox {
-  height: 300px;
+  width: 100%;
+  height: 420px;
+  background: #f4f9ff;
+  border-radius: 15px;
+  padding: 15px;
   overflow-y: auto;
-  margin-bottom: 12px;
-  padding: 8px;
-  background: white;
-  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* mensagens */
+/* ===== MENSAGEM DO BOT ===== */
 .botMsg {
-  background: #e1f5fe;
-  padding: 8px 12px;
-  border-radius: 12px;
-  margin: 4px 0;
-  text-align: left;
+  align-self: flex-start;
+  background: #007bff;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 12px 12px 12px 0px;
+  max-width: 80%;
+  font-size: 15px;
+  line-height: 1.4;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* ===== MENSAGEM DO USUÁRIO ===== */
 .userMsg {
-  background: #c8e6c9;
-  padding: 8px 12px;
-  border-radius: 12px;
-  margin: 4px 0;
-  text-align: right;
+  align-self: flex-end;
+  background: #e5e5e5;
+  color: #333;
+  padding: 12px 15px;
+  border-radius: 12px 12px 0px 12px;
+  max-width: 80%;
+  font-size: 15px;
+  line-height: 1.4;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* input */
+/* ===== ÁREA DE INPUT ===== */
 .inputArea {
   display: flex;
-  gap: 8px;
+  gap: 10px;
+  margin-top: 15px;
 }
 
-input {
+.inputArea input {
   flex: 1;
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #0077ff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
 }
 
-button {
-  background: #1976d2;
+.inputArea input:focus {
+  border-color: #004a8f;
+}
+
+.inputArea button {
+  background: #0077ff;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 18px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.inputArea button:hover {
+  background: #005fcc;
 }

@@ -5,6 +5,7 @@ import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import { IoLocationOutline } from "react-icons/io5";
 import { RiUserVoiceLine, RiRobot3Line } from "react-icons/ri";
 import { FaNotesMedical } from "react-icons/fa";
+import { IoIosPaper } from "react-icons/io";
 
 import style from "./PageInitial.module.css";
 import { NavLink } from "react-router-dom";
@@ -27,9 +28,8 @@ const PageInitial = () => {
 
         {!loadingPage && (
           <div>
-            <Navbar />
 
-            <h2 style={{ textAlign: "center", marginTop: "1rem" }}>
+            <h2 style={{ textAlign: "center", marginTop: "3rem" }}>
               Facilitando seu acesso aos serviços públicos de Caruaru, de forma
               rápida e sem burocracia.
             </h2>
@@ -49,10 +49,10 @@ const PageInitial = () => {
                 </div>
               </NavLink>
 
-              <NavLink to="/documentos">
+              <NavLink to="/guiaVoz">
                 <div>
-                  <FaNotesMedical />
-                  <span>Documentos</span>
+                  <IoIosPaper />
+                  <span>Guia por Voz</span>
                 </div>
               </NavLink>
 

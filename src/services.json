@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "category": "saude",
+    "name": "Consulta com Clínico Geral",
+    "provider": { "name": "UBS", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "RG ou certidão", "Cartão SUS (se houver)", "Comprovante de residência" ]
+  },
+  {
+    "id": 2,
+    "category": "saude",
+    "name": "Consulta com Pediatra",
+    "provider": { "name": "UBS", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "RG ou certidão", "Cartão SUS", "Cartão de vacina" ]
+  },
+  {
+    "id": 3,
+    "category": "saude",
+    "name": "Consulta Ginecologia / Obstetrícia",
+    "provider": { "name": "UBS/Maternidade", "type": "municipal" },
+    "lat": -8.293600,
+    "lng": -36.002800,
+    "endereco": "Av. José Rodrigues de Jesus, 396, Santa Rosa, Caruaru (Hospital da Mulher do Agreste)",
+    "requiredDocuments": [ "RG", "Cartão SUS", "Comprovante de residência", "Encaminhamento (se houver)" ]
+  },
+  {
+    "id": 4,
+    "category": "saude",
+    "name": "Cardiologia",
+    "provider": { "name": "Policlínica", "type": "regional" },
+    "lat": -8.282900,
+    "lng": -35.976500,
+    "endereco": "Rua dos Guararapes, S/N, Centro, Caruaru (CS Amélia de Pontes)",
+    "requiredDocuments": [ "RG", "Cartão SUS", "Encaminhamento" ]
+  },
+  {
+    "id": 5,
+    "category": "saude",
+    "name": "Endocrinologia",
+    "provider": { "name": "Policlínica", "type": "regional" },
+    "lat": -8.282900,
+    "lng": -35.976500,
+    "endereco": "Rua dos Guararapes, S/N, Centro, Caruaru (CS Amélia de Pontes)",
+    "requiredDocuments": [ "RG", "Cartão SUS", "Encaminhamento", "Exames recentes (se houver)" ]
+  },
+  {
+    "id": 6,
+    "category": "saude",
+    "name": "Psiquiatria",
+    "provider": { "name": "Serviço de Saúde Mental", "type": "municipal" },
+    "lat": -8.273000,
+    "lng": -36.005000,
+    "endereco": "Rua Rio Formoso, S/N, Boa Vista II, Caruaru (CAPS III)",
+    "requiredDocuments": [ "RG", "Cartão SUS", "Encaminhamento (se aplicável)" ]
+  },
+  {
+    "id": 7,
+    "category": "saude",
+    "name": "Dermatologia",
+    "provider": { "name": "Policlínica", "type": "regional" },
+    "lat": -8.282900,
+    "lng": -35.976500,
+    "endereco": "Rua dos Guararapes, S/N, Centro, Caruaru (CS Amélia de Pontes)",
+    "requiredDocuments": [ "RG", "Cartão SUS", "Fotos/relatos (opcional)" ]
+  },
+  {
+    "id": 8,
+    "category": "saude",
+    "name": "Ortopedia",
+    "provider": { "name": "Hospital", "type": "regional" },
+    "lat": -8.269000,
+    "lng": -35.984000,
+    "endereco": "BR-232, Km 130, Indianópolis, Caruaru (Hospital Regional do Agreste - HRA)",
+    "requiredDocuments": [ "RG", "Cartão SUS", "Encaminhamento/RX (se houver)" ]
+  },
+  {
+    "id": 9,
+    "category": "saude",
+    "name": "Neurologia",
+    "provider": { "name": "Policlínica", "type": "regional" },
+    "lat": -8.282900,
+    "lng": -35.976500,
+    "endereco": "Rua dos Guararapes, S/N, Centro, Caruaru (CS Amélia de Pontes)",
+    "requiredDocuments": [ "RG", "Cartão SUS", "Encaminhamento/exames" ]
+  },
+  {
+    "id": 10,
+    "category": "saude",
+    "name": "Geriatria",
+    "provider": { "name": "Centro do Idoso", "type": "municipal" },
+    "lat": -8.310000,
+    "lng": -36.010000,
+    "endereco": "Av. Leão Dourado, 1248, Caiucá, Caruaru (AME - Ambulatório Multiprofissional)",
+    "requiredDocuments": [ "RG", "Cartão SUS", "Comprovante de residência" ]
+  },
+  {
+    "id": 11,
+    "category": "saude",
+    "name": "Aferição de Pressão (Enfermagem)",
+    "provider": { "name": "UBS", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Cartão SUS (opcional)", "Documento com foto (opcional)" ]
+  },
+  {
+    "id": 12,
+    "category": "saude",
+    "name": "Curativos",
+    "provider": { "name": "UBS", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Solicitação/Pedido médico (se houver)", "Documento com foto" ]
+  },
+  {
+    "id": 13,
+    "category": "saude",
+    "name": "Retirada de Pontos",
+    "provider": { "name": "UBS/Hospital", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Documento com foto", "Encaminhamento (se houver)" ]
+  },
+  {
+    "id": 14,
+    "category": "saude",
+    "name": "Aplicação de Vacina",
+    "provider": { "name": "UBS", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Cartão de vacina", "Documento com foto" ]
+  },
+  {
+    "id": 15,
+    "category": "saude",
+    "name": "Hemograma (Exame Laboratorial)",
+    "provider": { "name": "Laboratório", "type": "parceiro" },
+    "lat": -8.282900,
+    "lng": -35.976500,
+    "endereco": "Rua dos Guararapes, S/N, Centro, Caruaru (Laboratório Central)",
+    "requiredDocuments": [ "Pedido médico", "Documento com foto", "Cartão SUS (se houver)" ]
+  },
+  {
+    "id": 16,
+    "category": "saude",
+    "name": "Ultrassom",
+    "provider": { "name": "Imagem/Clínica", "type": "regional" },
+    "lat": -8.269000,
+    "lng": -35.984000,
+    "endereco": "BR-232, Km 130, Indianópolis, Caruaru (Hospital Regional do Agreste - HRA)",
+    "requiredDocuments": [ "Pedido médico", "Documento com foto" ]
+  },
+  {
+    "id": 17,
+    "category": "saude",
+    "name": "Raio-X",
+    "provider": { "name": "Imagem/Clínica", "type": "regional" },
+    "lat": -8.269000,
+    "lng": -35.984000,
+    "endereco": "BR-232, Km 130, Indianópolis, Caruaru (Hospital Regional do Agreste - HRA)",
+    "requiredDocuments": [ "Pedido médico", "Documento com foto" ]
+  },
+  {
+    "id": 18,
+    "category": "saude",
+    "name": "Mamografia",
+    "provider": { "name": "Hospital/Unidade", "type": "regional" },
+    "lat": -8.269000,
+    "lng": -35.984000,
+    "endereco": "BR-232, Km 130, Indianópolis, Caruaru (Hospital Regional do Agreste - HRA)",
+    "requiredDocuments": [ "Pedido médico", "Documento com foto" ]
+  },
+  {
+    "id": 19,
+    "category": "saude",
+    "name": "Eletrocardiograma (ECG)",
+    "provider": { "name": "UBS/Policlínica", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Pedido médico (opcional)", "Documento com foto" ]
+  },
+  {
+    "id": 20,
+    "category": "saude",
+    "name": "Odontologia - Limpeza",
+    "provider": { "name": "UBS Odonto", "type": "municipal" },
+    "lat": -8.280795,
+    "lng": -35.950956,
+    "endereco": "Rua R-08, N 20, Cedro, Caruaru (C. de Saúde do Cedro)",
+    "requiredDocuments": [ "Cartão SUS (se houver)", "Documento com foto" ]
+  },
+  {
+    "id": 42,
+    "category": "saude",
+    "name": "Testes Rápidos (HIV/Sífilis/Hepatites)",
+    "provider": { "name": "UBS/Laboratório", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Documento com foto", "Cartão SUS (opcional)" ]
+  },
+  {
+    "id": 43,
+    "category": "saude",
+    "name": "Coleta de Preventivo (Papanicolau)",
+    "provider": { "name": "UBS", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Documento com foto", "Cartão SUS", "Agendamento prévio" ]
+  },
+  {
+    "id": 48,
+    "category": "saude",
+    "name": "Fisioterapia",
+    "provider": { "name": "UBS/Clínica", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Pedido médico (se houver)", "Documento com foto", "Encaminhamento" ]
+  },
+  {
+    "id": 49,
+    "category": "saude",
+    "name": "Fonoaudiologia",
+    "provider": { "name": "UBS/Clínica", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Encaminhamento (se aplicável)", "Documento com foto" ]
+  },
+  {
+    "id": 50,
+    "category": "saude",
+    "name": "Nutrição",
+    "provider": { "name": "UBS/Clínica", "type": "municipal" },
+    "lat": -8.275257,
+    "lng": -35.988027,
+    "endereco": "Rua Cabo, S/N, Cohab I, Caruaru (C. de Saúde Cohab I)",
+    "requiredDocuments": [ "Encaminhamento (se aplicável)", "Documento com foto" ]
+  },
+  {
+    "id": 21,
+    "category": "documentacao",
+    "name": "RG - 1ª via",
+    "provider": { "name": "Instituto de Identificação", "type": "estadual/municipal" },
+    "lat": -8.286500,
+    "lng": -35.975000,
+    "endereco": "Rua Vigário Freire, 110, Centro, Caruaru (Posto de Atendimento)",
+    "requiredDocuments": [ "Certidão de Nascimento original", "2 fotos 3x4", "Comprovante de residência" ]
+  },
+  {
+    "id": 22,
+    "category": "documentacao",
+    "name": "RG - 2ª via (furto/roubo)",
+    "provider": { "name": "Instituto de Identificação", "type": "estadual" },
+    "lat": -8.286500,
+    "lng": -35.975000,
+    "endereco": "Rua Vigário Freire, 110, Centro, Caruaru (Posto de Atendimento)",
+    "requiredDocuments": [ "Boletim de Ocorrência (se furto/roubo)", "Documento antigo (se tiver)", "Comprovante de residência" ]
+  },
+  {
+    "id": 23,
+    "category": "documentacao",
+    "name": "CPF - Emissão",
+    "provider": { "name": "Receita Federal / Posto", "type": "federal" },
+    "lat": -8.283500,
+    "lng": -35.970500,
+    "endereco": "Av. Rio Branco, 252, Nossa Senhora das Dores, Caruaru (Agência Receita Federal)",
+    "requiredDocuments": [ "Certidão de Nascimento ou RG", "Comprovante de residência" ]
+  },
+  {
+    "id": 24,
+    "category": "documentacao",
+    "name": "Passaporte",
+    "provider": { "name": "Polícia Federal", "type": "federal" },
+    "lat": -8.270000,
+    "lng": -35.968000,
+    "endereco": "R. Dr. José Mariano, 65, Maurício de Nassau, Caruaru (Referência PF)",
+    "requiredDocuments": [ "Documento com foto (RG/CPF)", "Título de eleitor (regular)", "Quitação militar (homens)" ]
+  },
+  {
+    "id": 25,
+    "category": "documentacao",
+    "name": "Certidão de Nascimento/ Casamento",
+    "provider": { "name": "Cartório", "type": "civil" },
+    "lat": -8.279800,
+    "lng": -35.971000,
+    "endereco": "Rua 15 de Novembro, 251, Nossa Senhora das Dores, Caruaru (Cartório de Registro Civil)",
+    "requiredDocuments": [ "Documentos de identificação", "Comprovante de residência", "Taxa (se aplicável)" ]
+  },
+  {
+    "id": 44,
+    "category": "documentacao",
+    "name": "Carteira de Trabalho (CTPS)",
+    "provider": { "name": "Ministério do Trabalho / SINE", "type": "federal/municipal" },
+    "lat": -8.276000,
+    "lng": -35.978000,
+    "endereco": "Av. Agamenon Magalhães, 444, Maurício de Nassau, Caruaru (SINE/DRT)",
+    "requiredDocuments": [ "Documento com foto", "CPF", "Comprovante de residência" ]
+  },
+  {
+    "id": 26,
+    "category": "detran",
+    "name": "CNH - 1ª via",
+    "provider": { "name": "DETRAN", "type": "estadual" },
+    "lat": -8.271000,
+    "lng": -35.999000,
+    "endereco": "Av. dos Estados, S/N, Nova Caruaru (Sede DETRAN)",
+    "requiredDocuments": [ "RG ou certidão", "CPF", "Comprovante de residência", "Exame médico", "Exame psicotécnico" ]
+  },
+  {
+    "id": 27,
+    "category": "detran",
+    "name": "CNH - Renovação",
+    "provider": { "name": "DETRAN", "type": "estadual" },
+    "lat": -8.271000,
+    "lng": -35.999000,
+    "endereco": "Av. dos Estados, S/N, Nova Caruaru (Sede DETRAN)",
+    "requiredDocuments": [ "CNH atual", "RG", "CPF", "Exame médico" ]
+  },
+  {
+    "id": 28,
+    "category": "detran",
+    "name": "Vistoria veicular",
+    "provider": { "name": "DETRAN/Oficina Autorizada", "type": "estadual" },
+    "lat": -8.271000,
+    "lng": -35.999000,
+    "endereco": "Av. dos Estados, S/N, Nova Caruaru (Sede DETRAN)",
+    "requiredDocuments": [ "CRLV", "Documento do proprietário", "Comprovante de residência" ]
+  },
+  {
+    "id": 45,
+    "category": "detran",
+    "name": "Prova Teórica CNH",
+    "provider": { "name": "DETRAN", "type": "estadual" },
+    "lat": -8.271000,
+    "lng": -35.999000,
+    "endereco": "Av. dos Estados, S/N, Nova Caruaru (Sede DETRAN)",
+    "requiredDocuments": [ "RG", "CPF", "Comprovante de residência", "Atestado escolar (se aplicável)" ]
+  },
+  {
+    "id": 29,
+    "category": "educacao",
+    "name": "Matrícula Escolar - Infantil",
+    "provider": { "name": "Secretaria de Educação", "type": "municipal" },
+    "lat": -8.281500,
+    "lng": -35.969000,
+    "endereco": "R. Dr. Berilo, 158, Maurício de Nassau, Caruaru (Sede Secretaria de Educação)",
+    "requiredDocuments": [ "Certidão de nascimento/RG da criança", "CPF (se houver)", "Cartão de vacina", "Comprovante de residência", "Documento do responsável" ]
+  },
+  {
+    "id": 30,
+    "category": "educacao",
+    "name": "Matrícula - Ensino Fundamental",
+    "provider": { "name": "Escola/Secretaria", "type": "municipal" },
+    "lat": -8.281500,
+    "lng": -35.969000,
+    "endereco": "R. Dr. Berilo, 158, Maurício de Nassau, Caruaru (Sede Secretaria de Educação)",
+    "requiredDocuments": [ "RG ou certidão", "Histórico escolar", "Comprovante de residência", "Documento do responsável" ]
+  },
+  {
+    "id": 46,
+    "category": "educacao",
+    "name": "Atendimento Pedagógico (Escola)",
+    "provider": { "name": "Escola", "type": "municipal" },
+    "lat": -8.281500,
+    "lng": -35.969000,
+    "endereco": "R. Dr. Berilo, 158, Maurício de Nassau, Caruaru (Sede Secretaria de Educação)",
+    "requiredDocuments": [ "Documento do aluno", "Histórico escolar (se aplicável)" ]
+  },
+  {
+    "id": 31,
+    "category": "municipal",
+    "name": "Cadastro Único (Bolsa Família / Auxílios)",
+    "provider": { "name": "CRAS/Prefeitura", "type": "municipal" },
+    "lat": -8.289000,
+    "lng": -35.979000,
+    "endereco": "Rua Professor José Leão, S/N, Boa Vista I, Caruaru (CRAS Boa Vista)",
+    "requiredDocuments": [ "Documentos de todos os membros da família (RG/CPF/Certidões)", "Comprovante de residência", "Comprovante de renda" ]
+  },
+  {
+    "id": 32,
+    "category": "municipal",
+    "name": "Atendimento CRAS",
+    "provider": { "name": "CRAS", "type": "municipal" },
+    "lat": -8.289000,
+    "lng": -35.979000,
+    "endereco": "Rua Professor José Leão, S/N, Boa Vista I, Caruaru (CRAS Boa Vista)",
+    "requiredDocuments": [ "Documentos pessoais", "Comprovante de residência", "Documentos de renda" ]
+  },
+  {
+    "id": 47,
+    "category": "municipal",
+    "name": "Alvará de Funcionamento",
+    "provider": { "name": "Prefeitura", "type": "municipal" },
+    "lat": -8.283000,
+    "lng": -35.973000,
+    "endereco": "Praça Teotônio Vilela, 100, Nossa Senhora das Dores, Caruaru (Sede Prefeitura)",
+    "requiredDocuments": [ "CNPJ/CPF do responsável", "Documentação do imóvel", "Plantas e ART (se aplicável)" ]
+  },
+  {
+    "id": 36,
+    "category": "servicos",
+    "name": "Atendimento Prefeitura - IPTU",
+    "provider": { "name": "Prefeitura", "type": "municipal" },
+    "lat": -8.283000,
+    "lng": -35.973000,
+    "endereco": "Praça Teotônio Vilela, 100, Nossa Senhora das Dores, Caruaru (Sede Prefeitura)",
+    "requiredDocuments": [ "Documento de propriedade/inscrição imobiliária", "Documento de identificação" ]
+  },
+  {
+    "id": 33,
+    "category": "privado",
+    "name": "Consulta Particular - Clínico",
+    "provider": { "name": "Clínica Privada", "type": "privada" },
+    "lat": -8.280000,
+    "lng": -35.978000,
+    "endereco": "Rua Nunes Machado, 200, Centro, Caruaru (Clínica Privada - Ref.)",
+    "requiredDocuments": [ "Documento com foto", "Cartão do convênio (se houver)" ]
+  },
+  {
+    "id": 34,
+    "category": "privado",
+    "name": "Consulta com Psicólogo Particular",
+    "provider": { "name": "Clínica Privada", "type": "privada" },
+    "lat": -8.280000,
+    "lng": -35.978000,
+    "endereco": "Rua Nunes Machado, 200, Centro, Caruaru (Clínica Privada - Ref.)",
+    "requiredDocuments": [ "Documento com foto", "Encaminhamento (opcional)" ]
+  },
+  {
+    "id": 35,
+    "category": "privado",
+    "name": "Agendamento em Clínica Veterinária",
+    "provider": { "name": "Clinica Veterinária", "type": "privada" },
+    "lat": -8.295000,
+    "lng": -35.970000,
+    "endereco": "Av. Agamenon Magalhães, 500, Maurício de Nassau, Caruaru (Clínica Veterinária)",
+    "requiredDocuments": [ "Documento do tutor", "Cartão de vacina do animal (se houver)" ]
+  },
+  {
+    "id": 37,
+    "category": "servicos",
+    "name": "Atendimento Previdência (INSS) - Perícia",
+    "provider": { "name": "INSS", "type": "federal" },
+    "lat": -8.291000,
+    "lng": -35.970000,
+    "endereco": "Av. Agamenon Magalhães, 788, Maurício de Nassau, Caruaru (Agência INSS)",
+    "requiredDocuments": [ "Documentos pessoais", "Laudos e exames", "Requerimento INSS" ]
+  },
+  {
+    "id": 38,
+    "category": "juridico",
+    "name": "Atendimento Defensoria Pública",
+    "provider": { "name": "Defensoria", "type": "estadual" },
+    "lat": -8.284000,
+    "lng": -35.968000,
+    "endereco": "R. Sete de Setembro, 200, Centro, Caruaru (Sede Defensoria)",
+    "requiredDocuments": [ "Documento com foto", "Comprovantes relevantes do caso" ]
+  },
+  {
+    "id": 39,
+    "category": "financeiro",
+    "name": "Atendimento Bancário - Abertura de Conta",
+    "provider": { "name": "Banco", "type": "privado" },
+    "lat": -8.284500,
+    "lng": -35.974000,
+    "endereco": "Av. Doutor Pedro Jordão, 100, Maurício de Nassau, Caruaru (Agência Bancária)",
+    "requiredDocuments": [ "RG", "CPF", "Comprovante de residência", "Comprovante de renda (se aplicável)" ]
+  },
+  {
+    "id": 40,
+    "category": "outros",
+    "name": "Avaliação Física (Academia)",
+    "provider": { "name": "Academia", "type": "privada" },
+    "lat": -8.290000,
+    "lng": -35.965000,
+    "endereco": "Rua Mestre Vitalino, 50, Universitário, Caruaru (Academia - Ref.)",
+    "requiredDocuments": [ "Documento com foto", "Atestado médico (se necessário)" ]
+  },
+  {
+    "id": 41,
+    "category": "outros",
+    "name": "Serviço Correios - Depósito/Retirada",
+    "provider": { "name": "Correios", "type": "federal" },
+    "lat": -8.285500,
+    "lng": -35.971500,
+    "endereco": "R. José de Holanda Cavalcanti, 100, Nossa Senhora das Dores, Caruaru (Agência Central Correios)",
+    "requiredDocuments": [ "Documento com foto", "Dados do envio" ]
+  }
+]

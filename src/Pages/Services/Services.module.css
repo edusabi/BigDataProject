@@ -1,0 +1,42 @@
+.container {
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.category {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+}
+
+.categoryBox {
+  background: linear-gradient(to right, var(--azulEscuro), rgb(172, 226, 238));
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  margin-bottom: 24px;
+  transition: 0.2s ease;
+}
+
+.categoryBox:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.list {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+.docList {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #555;
+}

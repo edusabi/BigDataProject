@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     background: linear-gradient(to right, var(--azulEscuro), rgb(172, 226, 238));
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.56);
 }
 
 .divImg{
@@ -13,17 +14,24 @@
     padding: 1rem 0;
 }
 
-.divList{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    background-color: var(--azulClaro);
-    padding: .6rem 0;
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 6px;
 }
 
-.divList a{
-    color: var(--branco);
-    letter-spacing: 1px;
-    font-size: 1.05rem;
+.searchBox input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  width: 200px;
+}
+
+.searchBox input::placeholder {
+  color: #dcdcdc;
 }

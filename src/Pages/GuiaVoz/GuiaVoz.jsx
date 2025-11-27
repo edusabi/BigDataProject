@@ -31,7 +31,7 @@ const GuiaVoz = () => {
   // Envia texto para o backend Flask
   const sendToAI = async (message) => {
     try {
-      const res = await fetch("http://localhost:3000/chat", {
+      const res = await fetch("https://bigdatapj.discloud.app/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }),

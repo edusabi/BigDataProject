@@ -17,7 +17,7 @@ const ChatBot = () => {
   setInput("");
 
   try {
-    const response = await fetch("https://bigdatapj.discloud.app/", {
+    const response = await fetch("https://bigdatapj.discloud.app/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -1,36 +1,64 @@
 import { useEffect, useRef, useState } from "react";
 
 const GuiaVoz = () => {
-  const [listening, setListening] = useState(false);
+  // Estados para controlar a interface
+  const [status, setStatus] = useState("idle"); // idle, listening, processing, speaking
+  const [displayText, setDisplayText] = useState("Toque no botão para começar");
+  
   const recognitionRef = useRef(null);
 
-  // Remove vírgulas e emojis
+  // --- 1. Limpeza de Texto ---
   const cleanText = (text) => {
     return text
       .replace(/[^\w\sáéíóúàãõâêôç]/gi, "") // Remove emojis e símbolos
       .replace(/,/g, ""); // Remove vírgulas
   };
 
-  // Faz a IA falar
-  const speak = (text) => {
-    const clean = cleanText(text);
-
-    const utter = new SpeechSynthesisUtterance(clean);
-    utter.lang = "pt-BR";
-    utter.rate = 1;
-    utter.pitch = 1;
-
-    window.speechSynthesis.speak(utter);
-
-    // Quando terminar de falar → recomeça a ouvir
-    utter.onend = () => {
-      startListening();
-    };
+  // --- 2. Função para Parar Tudo (Interromper) ---
+  const stopInteraction = () => {
+    // Para o reconhecimento de voz
+    if (recognitionRef.current) {
+      recognitionRef.current.stop();
+    }
+    // Para a fala da IA
+    window.speechSynthesis.cancel();
+    
+    setStatus("idle");
+    setDisplayText("Interrompido. Toque para falar novamente.");
   };
 
-  // Envia texto para o backend Flask
+  // --- 3. Função para a IA Falar ---
+  const speak = (text) => {
+    // Se o usuário interrompeu antes, não fala nada
+    if (status === "idle") return; 
+
+    const clean = cleanText(text);
+    const utter = new SpeechSynthesisUtterance(clean);
+    utter.lang = "pt-BR";
+    utter.rate = 1.1; // Um pouco mais natural
+
+    setStatus("speaking");
+    setDisplayText("🔊 IA Falando... (Toque para interromper)");
+
+    utter.onend = () => {
+      setStatus("idle");
+      setDisplayText("Toque para falar novamente");
+    };
+
+    utter.onerror = () => {
+      setStatus("idle");
+    };
+
+    window.speechSynthesis.speak(utter);
+  };
+
+  // --- 4. Enviar para o Backend ---
   const sendToAI = async (message) => {
+    setStatus("processing");
+    setDisplayText("⏳ Processando resposta...");
+
     try {
+      // URL CORRIGIDA PARA SUA ROTA ESPECÍFICA
       const res = await fetch("https://bigdatapj.discloud.app/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -38,68 +66,133 @@ const GuiaVoz = () => {
       });
 
       const data = await res.json();
+      
+      // Manda a IA falar a resposta
       speak(data.answer);
 
     } catch (err) {
-      speak("Erro ao conectar com o servidor");
+      console.error(err);
+      setStatus("idle");
+      setDisplayText("Erro ao conectar. Tente novamente.");
+      speak("Desculpe, tive um problema de conexão.");
     }
   };
 
-  // Inicia reconhecimento de voz
-  const startListening = () => {
-    if (!recognitionRef.current) return;
-
-    recognitionRef.current.start();
-    setListening(true);
-  };
-
-  // Configura reconhecimento de voz
+  // --- 5. Configuração do Reconhecimento de Voz ---
   useEffect(() => {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
-      alert("Seu navegador não suporta reconhecimento de voz.");
+      setDisplayText("Seu navegador não suporta voz.");
       return;
     }
 
     const recognition = new SpeechRecognition();
     recognition.lang = "pt-BR";
-    recognition.continuous = false;
+    recognition.continuous = false; // Para assim que terminar a frase
     recognition.interimResults = false;
+
+    recognition.onstart = () => {
+      setStatus("listening");
+      setDisplayText("🎙 Ouvindo... (Fale agora)");
+    };
 
     recognition.onresult = (event) => {
       const text = event.results[0][0].transcript;
       const clean = cleanText(text);
-
+      // Assim que reconhecer o texto, envia para a IA
       sendToAI(clean);
     };
 
-    recognition.onerror = () => {
-      startListening(); // reinicia se der erro
+    recognition.onerror = (event) => {
+      console.error("Erro de voz", event.error);
+      setStatus("idle");
+      setDisplayText("Não entendi. Tente novamente.");
     };
 
     recognition.onend = () => {
-      // Só reinicia se não estiver falando
-      if (!window.speechSynthesis.speaking) {
-        startListening();
+      // Se parou de ouvir e não foi para processamento, volta para idle
+      if (status === "listening") {
+        setStatus("idle");
       }
     };
 
     recognitionRef.current = recognition;
 
-    // começa a ouvir automaticamente
-    startListening();
+    // Limpeza ao sair da página
+    return () => {
+      stopInteraction();
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Array vazio para rodar apenas uma vez
 
-  }, []);
+  // --- 6. Controle do Botão (O Cérebro) ---
+  const handleInteraction = () => {
+    // Se estiver fazendo qualquer coisa (ouvindo, processando ou falando), o botão serve para PARAR
+    if (status === "listening" || status === "speaking" || status === "processing") {
+      stopInteraction();
+    } else {
+      // Se estiver parado, começa a ouvir
+      try {
+        window.speechSynthesis.cancel(); // Garante silêncio antes de começar
+        recognitionRef.current.start();
+      } catch (e) {
+        console.error("Erro ao iniciar:", e);
+        setStatus("idle");
+      }
+    }
+  };
+
+  const getButtonColor = () => {
+    switch (status) {
+      case "listening": return "#ff4444"; // Vermelho para parar
+      case "speaking": return "#ff4444";  // Vermelho para parar
+      case "processing": return "#ffbb33"; // Amarelo esperando
+      default: return "#00C851"; // Verde para começar
+    }
+  };
 
   return (
-    <div style={{ padding: 20, textAlign: "center" }}>
-      <h1>Assistente por Voz</h1>
+    <div style={{ 
+      padding: "40px", 
+      textAlign: "center", 
+      fontFamily: "Arial, sans-serif",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "20px"
+    }}>
+      <h1>Assistente Resolve Fácil</h1>
 
-      <p style={{ fontSize: 18 }}>
-        {listening ? "🎙 Ouvindo..." : "Parado"}
-      </p>
+      <div style={{
+        minHeight: "50px",
+        fontSize: "18px",
+        color: "#333",
+        fontWeight: "bold"
+      }}>
+        {displayText}
+      </div>
+
+      <button
+        onClick={handleInteraction}
+        style={{
+          width: "120px",
+          height: "120px",
+          borderRadius: "50%",
+          border: "none",
+          backgroundColor: getButtonColor(),
+          color: "white",
+          fontSize: "16px",
+          cursor: "pointer",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+          transition: "background-color 0.3s"
+        }}
+      >
+        {status === "idle" ? "🎙 FALAR" : "⏹ PARAR"}
+      </button>
+
+      {/* Dica visual extra */}
+      {status === "speaking" && <p style={{color: "#666"}}>A IA está falando...</p>}
     </div>
   );
 };

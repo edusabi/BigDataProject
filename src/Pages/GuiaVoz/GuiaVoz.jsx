@@ -4,7 +4,7 @@ const GuiaVoz = () => {
   const [listening, setListening] = useState(false);
   const recognitionRef = useRef(null);
 
-  // Limpa o texto
+  // Limpa texto
   const cleanText = (text) => {
     return text
       .replace(/[^\w\sáéíóúàãõâêôç]/gi, "")
@@ -23,7 +23,12 @@ const GuiaVoz = () => {
     window.speechSynthesis.speak(utter);
   };
 
-  // Envia texto ao backend Flask
+  // Botão parar fala
+  const stopSpeaking = () => {
+    window.speechSynthesis.cancel();
+  };
+
+  // Envia texto ao backend
   const sendToAI = async (message) => {
     try {
       const res = await fetch("https://bigdatapj.discloud.app/chat", {
@@ -40,7 +45,7 @@ const GuiaVoz = () => {
     }
   };
 
-  // Liga reconhecimento
+  // Iniciar reconhecimento
   const startListening = () => {
     if (!recognitionRef.current) return;
 
@@ -48,7 +53,7 @@ const GuiaVoz = () => {
     setListening(true);
   };
 
-  // Desliga reconhecimento
+  // Parar reconhecimento
   const stopListening = () => {
     if (!recognitionRef.current) return;
 
@@ -56,13 +61,13 @@ const GuiaVoz = () => {
     setListening(false);
   };
 
-  // Botão liga/desliga
+  // Alternar
   const toggleListening = () => {
     if (listening) stopListening();
     else startListening();
   };
 
-  // Configuração do reconhecimento
+  // Configura reconhecimento
   useEffect(() => {
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -84,11 +89,10 @@ const GuiaVoz = () => {
     };
 
     recognition.onerror = () => {
-      stopListening(); // se der erro, apenas para
+      stopListening();
     };
 
     recognition.onend = () => {
-      // não reinicia automaticamente
       setListening(false);
     };
 
@@ -99,6 +103,7 @@ const GuiaVoz = () => {
     <div style={{ padding: 20, textAlign: "center" }}>
       <h1>Assistente por Voz</h1>
 
+      {/* Botão de ouvir */}
       <button
         onClick={toggleListening}
         style={{
@@ -109,9 +114,26 @@ const GuiaVoz = () => {
           background: listening ? "#ff4d4d" : "#4caf50",
           color: "white",
           border: "none",
+          marginRight: 10,
         }}
       >
-        {listening ? "Parar" : "Falar"}
+        {listening ? "Parar de Ouvir" : "Falar"}
+      </button>
+
+      {/* Botão parar fala */}
+      <button
+        onClick={stopSpeaking}
+        style={{
+          padding: "15px 30px",
+          fontSize: "18px",
+          cursor: "pointer",
+          borderRadius: 8,
+          background: "#333",
+          color: "white",
+          border: "none",
+        }}
+      >
+        Parar Fala
       </button>
 
       <p style={{ fontSize: 18, marginTop: 20 }}>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./ChatBot.module.css";
 import { NavLink } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
+
 
 const ChatBot = () => {
   const [input, setInput] = useState("");
@@ -37,9 +39,8 @@ const ChatBot = () => {
 
   return (
     <div className={styles.page}>
-      <NavLink to="/">
-        <button className={styles.btnVoltar}>VOLTAR</button>
-      </NavLink>
+          <NavLink to="/"><FaArrowLeftLong style={{fontSize:"1.5rem", color:"black", position:"absolute", left: "20px"}}/></NavLink>
+      
 
       <div className={styles.chatContainer}>
         <h1>Resolve Fácil Caruaru</h1>

@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
+
 
 const GuiaVoz = () => {
   const [listening, setListening] = useState(false);
@@ -101,9 +104,10 @@ const GuiaVoz = () => {
 
   return (
     <div style={{ padding: 20, textAlign: "center" }}>
-      <h1>Assistente por Voz</h1>
+      <NavLink to="/"><FaArrowLeftLong style={{fontSize:"1.5rem", color:"black", position:"absolute", left: "20px"}}/></NavLink>
 
-      {/* Botão de ouvir */}
+      <h1 style={{margin:"2rem 0"}}>Assistente por Voz</h1>
+
       <button
         onClick={toggleListening}
         style={{
